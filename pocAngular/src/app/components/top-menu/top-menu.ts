@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-top-menu',
@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 
 
 //Menu du haut
-export class TopMenu {
+export class TopMenu implements OnInit {
 
   //#region --- Attributs ---
   private _titre : string;
@@ -30,9 +30,16 @@ export class TopMenu {
   //#endregion
 
   //#region --- Constructeurs ---
+  //Constructeur = sert à initialisé les attributs de bases
   public constructor() {
     this._titre = "Mon Titre";
     this._boutons = ["Bouton1","Bouton2"];
+  }
+
+  //Méthode appelée automatiquement à la fin de l'initialisation
+  //Y mettre l'initialisation "avancée"
+  ngOnInit(): void {
+      
   }
   //#endregion
 }
