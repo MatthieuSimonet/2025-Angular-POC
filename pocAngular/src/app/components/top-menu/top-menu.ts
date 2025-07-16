@@ -1,8 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
+//Pour pouvoir utiliser le pipe dans le html
+import {UpperCasePipe} from '@angular/common';
+import { daoTest } from '../../dao/daoTest';
 
 @Component({
   selector: 'app-top-menu',
-  imports: [],
+  imports: [UpperCasePipe],
   templateUrl: './top-menu.html',
   styleUrl: './top-menu.scss'
 })
@@ -53,8 +56,11 @@ export class TopMenu implements OnInit {
   //#endregion
 
   //#region --- Méthodes ---
-  public OnClicPaf() : void {
+  public async OnClicPaf() {
     this._adresseLogo = 'https://www.searchenginejournal.com/wp-content/uploads/2019/07/the-essential-guide-to-using-images-legally-online.png';
+
+    const text = await new daoTest().Get();
+    alert(text);
   }
   //#endregion
 }

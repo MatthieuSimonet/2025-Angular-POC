@@ -1,5 +1,5 @@
 <div class="menu-top">
-    <h2>{{ titre }}</h2>
+    <h2>{{ titre | uppercase }}</h2>
     @for(bouton of boutons; track bouton) {
         <p>{{bouton}}</p>
     }
